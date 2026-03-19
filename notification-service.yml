@@ -1,1 +1,14 @@
-#
+feign:
+  circuitbreaker:
+    enabled: true
+
+# Feign + Circuit Breaker 트랜잭션 처리
+resilience4j:
+  circuitbreaker:
+    instances:
+      # @CircuitBraker의 name과 동일한 이름으로 설정해야 함(productService)
+      productService:
+        # 40% 이상의 실패율이 발생하면 Circuit Breaker가 열리도록 설정
+        failureRateThreshold: 40
+        # 10초 동안 Circuit Breaker가 열려(적용되어) 있도록 설정(열린 상태에서의 대기 시간)
+        waitDurationInOpenState: 10000 # ms 단위, 10s라고 작성하면 안된다.
