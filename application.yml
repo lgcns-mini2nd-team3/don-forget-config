@@ -4,15 +4,15 @@ eureka:
 
 spring:
     rabbitmq:
-        host: rabbitmq-service
+        host: localhost
         port: 5672
         username: guest
         password: guest
 
     datasource:
-        url: jdbc:mariadb://${DB_HOST}:3307/inspire?useSSL=true&requireSSL=true  
-        username: ${DB_ADMIN}  
-        password: ${DB_PASSWORD}
+        url: jdbc:mysql://localhost:3307/inspire?useSSL=false
+        username: root
+        password: 123456789
 
     jpa:
         database: mysql
