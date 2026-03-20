@@ -34,13 +34,13 @@ spring:
           filters:
           - StripPrefix=1
 
-        - id: payment-service
+
+        - id: user-service
           predicates:
-            - Path=/payment-service/**
-          uri: lb://payment-service
+            - Path=/user-service/**
+          uri: lb://user-service
           filters:
           - StripPrefix=1
-
 
 jwt:
   secret: ogolgye-super-secret-key-for-jwt-forwebstudy
