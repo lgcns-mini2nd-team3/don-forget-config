@@ -32,5 +32,12 @@ spring:
           filters:
           - StripPrefix=1
 
+        - id: my-bill-service
+          predicates:
+            - Path=/my-bill-service/**
+          uri: lb://my-bill-service
+          filters:
+          - StripPrefix=1
+
 jwt:
   secret: ogolgye-super-secret-key-for-jwt-forwebstudy
