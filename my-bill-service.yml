@@ -1,1 +1,15 @@
-#
+server:
+    port: 8082
+
+spring:
+    application:
+        name: my-bill-service
+
+    datasource:
+        url: jdbc:mariadb://${DB_HOST}:${DB_PORT}/${DB_NAME}?useSSL=false
+        username: ${DB_ADMIN}
+        password: ${DB_PASSWORD}
+
+    jpa:
+        hibernate:
+            ddl-auto: update
