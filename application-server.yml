@@ -1,0 +1,15 @@
+eureka:
+    client:
+        enabled: false
+
+spring:
+    rabbitmq:
+        host: rabbitmq-service
+        port: 5672
+        username: guest
+        password: guest
+
+    datasource:
+        url: jdbc:mariadb://${DB_HOST}:3306/inspire?useSSL=true&requireSSL=true  
+        username: ${DB_ADMIN}  
+        password: ${DB_PASSWORD}
