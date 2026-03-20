@@ -1,0 +1,46 @@
+server:
+  port: 8080
+spring:
+  # Spring Cloud Gateway 설정
+  cloud:
+    gateway:
+      # cors 설정
+      # 모든 요청이 gateway를 통해 들어오므로, CORS 설정을 gateway에서 처리
+      globalcors:
+        corsConfigurations:
+            '[/**]': # 모든 경로에 대해 CORS 설정 적용 -> 아래와 합하면 localhost:3000에서 오는 요청에 대해 CORS 허용
+              allowedOrigins: "lb://localhost:3000" # React 앱이 실행되는 주소
+              allowedMethods: "GET,POST,PUT,DELETE,OPTIONS" # 허용할 lb 메서드
+              allowedHeaders: "*" # 모든 헤더 허용
+              exposedHeaders: "*" # 모든 헤더 노출
+              allowCredentials: true # 쿠키 허용
+
+      # eureka server에 등록된 client를 찾아서 사용자의 url_pattern을 매칭하는 작업
+      routes:
+        - id: user-service # uereka에 등록된 서비스 이름과 동일하게 설정
+          # url 상에서 /user-service/**로 시작하는 요청이 들어오면, user-service로 라우팅
+          # 굳이 user-service로 시작할 필요는 없지만, 서비스 이름과 일치시키는 것이 일반적 
+          predicates:
+            - Path=/user-service/**
+          uri: lb://user-service # Eureka Server에 등록된 user-service로 라우팅 (lb:는 load balancing을 의미)
+          filters:
+          # 첫번째 접두어를 제거하는 필터 설정(lb://localhost:8080/user-service(첫번째 접두어)/api/v1/users -> lb://localhost:8080/api/v1/users로 전달)
+          - StripPrefix=1 # /user-service/**에서 /user-service 부분을 제거하고 뒤의 경로만 user-service로 전달 ex) /user-service/api/v1/users -> /api/v1/users로 전달
+        
+        - id: my-bill-service
+          predicates:
+            - Path=/my-bill-service/**
+          uri: lb://my-bill-service
+          filters:
+          - StripPrefix=1
+
+        - id: payment-service
+          predicates:
+            - Path=/payment-service/**
+          uri: lb://payment-service
+          filters:
+          - StripPrefix=1
+
+
+jwt:
+  secret: ogolgye-super-secret-key-for-jwt-forwebstudy
