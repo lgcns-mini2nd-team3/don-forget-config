@@ -32,6 +32,5 @@ spring:
           filters:
           - StripPrefix=1
 
-
 jwt:
   secret: ogolgye-super-secret-key-for-jwt-forwebstudy

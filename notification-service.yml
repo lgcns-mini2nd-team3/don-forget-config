@@ -1,7 +1,3 @@
-spring:
-  kafka:
-    bootstrap-servers: kafka-service:9092
-    # kafka의 서버이므로 consumer는 사용 안함
 feign:
   circuitbreaker:
     enabled: true

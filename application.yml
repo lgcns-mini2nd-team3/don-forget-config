@@ -1,18 +1,26 @@
+server:
+  port: 0
+
 eureka:
     client:
-        enabled: false
+        service-url:
+            defaultZone: http://localhost:8761/eureka/
+
+# eureka:
+#     client:
+#         enabled: false
 
 spring:
     rabbitmq:
-        host: rabbitmq-service
+        host: localhost
         port: 5672
         username: guest
         password: guest
 
     datasource:
-        url: jdbc:mariadb://${DB_HOST}:3306/inspire?useSSL=true&requireSSL=true  
-        username: ${DB_ADMIN}  
-        password: ${DB_PASSWORD}
+        url: jdbc:mariadb://localhost:3306/inspire?useSSL=false
+        username: root
+        password: 123456789
 
     jpa:
         database: mysql
@@ -31,3 +39,4 @@ spring:
     cloud:
         bus:
             enabled: true
+            
