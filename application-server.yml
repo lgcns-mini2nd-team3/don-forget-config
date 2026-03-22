@@ -9,10 +9,17 @@ spring:
         username: guest
         password: guest
 
+
     datasource:
+        hikari:
+        maximum-pool-size: 5
+        minimum-idle: 2
+        idle-timeout: 30000
+        max-lifetime: 1800000
         url: jdbc:mariadb://${DB_HOST}:3306/inspire?useSSL=true&requireSSL=true  
         username: ${DB_ADMIN}  
         password: ${DB_PASSWORD}
+        
     data:
         redis:
             host: redis-service
