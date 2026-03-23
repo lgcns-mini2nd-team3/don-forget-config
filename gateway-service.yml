@@ -1,3 +1,6 @@
+server:
+  port: 8080
+
 spring:
   # Spring Cloud Gateway 설정
   cloud:
@@ -33,4 +36,4 @@ spring:
           - StripPrefix=1
 
 jwt:
-  secret: ogolgye-super-secret-key-for-jwt-forwebstudy
+  secret: daniel0h-secret-key-access-123456789
