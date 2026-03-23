@@ -40,3 +40,6 @@ spring:
         bus:
             enabled: true
             
+jwt:
+  secret: daniel0h-secret-key-access-123456789
+            
