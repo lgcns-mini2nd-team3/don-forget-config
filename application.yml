@@ -1,10 +1,6 @@
 server:
   port: ${SERVER_PORT:0}
-
-spring:
-  cloud:
-    config:
-      fail-fast: false
+  
 
 eureka:
   client:
@@ -40,3 +36,4 @@ spring:
   cloud:
     bus:
       enabled: true
+
