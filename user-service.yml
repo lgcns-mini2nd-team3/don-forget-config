@@ -33,4 +33,4 @@ eureka:
       defaultZone: ${EUREKA_DEFAULT_ZONE:http://eureka-service:8761/eureka/}
 
 jwt:
-  secret: ${JWT_SECRET:daniel0h-this-is-my-secret-key-123456789}
+  secret: ${JWT_SECRET}
