@@ -1,2 +1,5 @@
+# jwt:
+#   secret: {JWT_SECRET_KEY} # JWT 시크릿 키, 환경 변수로 설정하여 보안 강화
+
 jwt:
-  secret: {JWT_SECRET_KEY} # JWT 시크릿 키, 환경 변수로 설정하여 보안 강화
+  secret: ogolgye-super-secret-key-for-jwt-forwebstudy
