@@ -41,10 +41,17 @@ spring:
           filters:
           - StripPrefix=1
 
-        - id: user-service
+        - id: template-service
           predicates:
-            - Path=/user-service/**
-          uri: lb://user-service
+            - Path=/template-service/**
+          uri: lb://template-service
+          filters:
+          - StripPrefix=1
+
+        - id: notification-service
+          predicates:
+            - Path=/notification-service/**
+          uri: lb://notification-service
           filters:
           - StripPrefix=1
 
