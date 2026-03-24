@@ -34,4 +34,6 @@ spring:
           uri: lb://payment-service
           filters:
           - StripPrefix=1
+jwt:
+  secret: ${JWT_SECRET:daniel0h-this-is-my-secret-key-123456789}
 
