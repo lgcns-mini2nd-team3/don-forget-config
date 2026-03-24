@@ -1,4 +1,31 @@
+<<<<<<< HEAD
 spring:
+=======
+server:
+  port: 0
+
+eureka:
+    client:
+        service-url:
+            defaultZone: http://localhost:8761/eureka/
+
+# eureka:
+#     client:
+#         enabled: false
+
+spring:
+    rabbitmq:
+        host: localhost
+        port: 5672
+        username: guest
+        password: guest
+
+    datasource:
+        url: jdbc:mariadb://localhost:3306/inspire?useSSL=false
+        username: root
+        password: 123456789
+
+>>>>>>> feature/external-billing-service
     jpa:
         database: mysql
         database-platform: org.hibernate.dialect.MariaDBDialect
@@ -8,4 +35,9 @@ spring:
             
     cloud:
         bus:
+<<<<<<< HEAD
             enabled: true
+=======
+            enabled: true
+            
+>>>>>>> feature/external-billing-service
