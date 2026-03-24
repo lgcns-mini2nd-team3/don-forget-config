@@ -17,7 +17,7 @@ spring:
              idle-timeout: 30000        # 커넥션이 유휴 상태로 유지될 수 있는 최대 시간(30초)
              connection-timeout: 30000  # 커넥션을 얻기 위해 기다리는 최대 시간(30초)
              max-lifetime: 1800000      # 커넥션이 풀에서 살아있는 최대 시간(30분)
-        url: jdbc:mariadb://${DB_HOST}:3306/inspire?useSSL=true&requireSSL=true  
+        url: jdbc:mariadb://${DB_HOST}:3306/don-forget?useSSL=true&requireSSL=true  
         username: ${DB_ADMIN}  
         password: ${DB_PASSWORD}
 
