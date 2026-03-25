@@ -7,7 +7,7 @@ spring:
       globalcors:
         corsConfigurations:
             '[/**]': # 모든 경로에 대해 CORS 설정 적용 -> 아래와 합하면 localhost:3000에서 오는 요청에 대해 CORS 허용
-              allowedOrigins: "http://localhost:3000" # React 앱이 실행되는 주소
+              allowedOrigins: "*" # 모든 출처 허용 (실제 운영 환경에서는 특정 도메인으로 제한하는 것이 좋음)
               allowedMethods: "GET,POST,PUT,DELETE,OPTIONS, PATCH" # 허용할 http 메서드
               allowedHeaders: "*" # 모든 헤더 허용
               exposedHeaders: "*" # 모든 헤더 노출
